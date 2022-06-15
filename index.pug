@@ -1,0 +1,28 @@
+doctype html 
+html 
+  head 
+    meta( charset='utf-8' )
+    title PassportJS Tutorial
+  body
+    if user
+      h1 Welcome back #{ user.username }
+      a( href='/log-out' ) Log Out
+
+    else
+      h1 Please log in 
+
+      form( method='POST' action='/log-in' )
+        label( for='username' ) Username 
+        input(
+          name='username'
+          placeholder='Enter username'
+          type='text'
+        )
+        label(for='password')
+        input(
+          name='password'
+          type='password'
+        )
+        button( type='submit' ) Log In
+
+      a( href='/sign-up' ) Sign Up
